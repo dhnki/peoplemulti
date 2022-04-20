@@ -1,0 +1,36 @@
+
+server:
+  port: 12003
+
+spring:
+  datasource:
+    url: jdbc:mysql://db-hatinroo-mysql.mysql.database.azure.com:3306/hatinroo?useSSL=true&requireSSL=false&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: hatinroo@db-hatinroo-mysql
+    password: PMhealthcare!&
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    minimum-idle: 10
+    maximum-pool-size: 20
+    idle-timeout: 70000
+    max-lifetime: 270000
+    connection-timeout: 10000  #ms
+    validation-timeout: 10000
+
+
+  jpa:
+    generate-ddl: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      format_sql: true
+      show_sql: true
+
+
+azure:
+  storage:
+    connection-string : DefaultEndpointsProtocol=https;AccountName=hatinroo;AccountKey=F8wdaeg07CoK6j9KIbEKyFLouZ6sdji6hEBl1Jl7T+EbQOwd4TufOhKyBaChChiD16Uvepqt/snQ2z+Tc/UStw==;EndpointSuffix=core.windows.net
+
+logging:
+  level:
+    com.pmhealth.app.apiserver : info
